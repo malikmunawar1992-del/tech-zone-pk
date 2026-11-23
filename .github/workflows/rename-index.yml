@@ -1,0 +1,17 @@
+name: Rename tech-zone-pk.html to index.html
+on:
+  workflow_dispatch:
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file to index.html
+        run: |
+          git config user.name "malikmunawar1992-del"
+          git config user.email "malikmunawar1992-del@users.noreply.github.com"
+          git mv tech-zone-pk.html index.html
+          git commit -m "Rename tech-zone-pk.html to index.html"
+          git push
